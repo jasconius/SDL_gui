@@ -31,6 +31,7 @@
 		0A4CF1FF1BCDDC2A00309858 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1FE1BCDDC2A00309858 /* libboost_system.dylib */; };
 		0A4CF2081BCDE29200309858 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CF2071BCDE29200309858 /* main.cpp */; };
 		0A4CF20C1BCDE2A800309858 /* libSDL_gui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1B01BCDC79000309858 /* libSDL_gui.dylib */; };
+		0A4CF2101BCDE90F00309858 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CF20F1BCDE90F00309858 /* Game.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +73,8 @@
 		0A4CF2001BCDDE5F00309858 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A4CF2051BCDE29200309858 /* TestApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestApp; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4CF2071BCDE29200309858 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0A4CF20F1BCDE90F00309858 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = src/Game.cpp; sourceTree = "<group>"; };
+		0A4CF2111BCDE91E00309858 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = include/Game.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +160,27 @@
 		0A4CF2061BCDE29200309858 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				0A4CF20E1BCDE80F00309858 /* include */,
+				0A4CF20D1BCDE80C00309858 /* src */,
 				0A4CF2071BCDE29200309858 /* main.cpp */,
 			);
 			path = TestApp;
+			sourceTree = "<group>";
+		};
+		0A4CF20D1BCDE80C00309858 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0A4CF20F1BCDE90F00309858 /* Game.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		0A4CF20E1BCDE80F00309858 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				0A4CF2111BCDE91E00309858 /* Game.h */,
+			);
+			name = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A4CF2081BCDE29200309858 /* main.cpp in Sources */,
+				0A4CF2101BCDE90F00309858 /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
