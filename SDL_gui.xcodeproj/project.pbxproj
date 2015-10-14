@@ -14,8 +14,8 @@
 		0A4CF1D01BCDC8A200309858 /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CF1C51BCDC8A200309858 /* View.cpp */; settings = {ASSET_TAGS = (); }; };
 		0A4CF1D11BCDC8A200309858 /* ViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CF1C61BCDC8A200309858 /* ViewController.cpp */; settings = {ASSET_TAGS = (); }; };
 		0A4CF1E01BCDC8AC00309858 /* Button.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A4CF1D31BCDC8AC00309858 /* Button.h */; settings = {ASSET_TAGS = (); }; };
-		0A4CF1E41BCDC8AC00309858 /* IFSGUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A4CF1D71BCDC8AC00309858 /* IFSGUI.h */; settings = {ASSET_TAGS = (); }; };
-		0A4CF1E51BCDC8AC00309858 /* IFSGUISettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A4CF1D81BCDC8AC00309858 /* IFSGUISettings.h */; settings = {ASSET_TAGS = (); }; };
+		0A4CF1E41BCDC8AC00309858 /* SDLGUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A4CF1D71BCDC8AC00309858 /* SDLGUI.h */; settings = {ASSET_TAGS = (); }; };
+		0A4CF1E51BCDC8AC00309858 /* SDLGUISettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A4CF1D81BCDC8AC00309858 /* SDLGUISettings.h */; settings = {ASSET_TAGS = (); }; };
 		0A4CF1E61BCDC8AC00309858 /* ImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A4CF1D91BCDC8AC00309858 /* ImageView.h */; settings = {ASSET_TAGS = (); }; };
 		0A4CF1E71BCDC8AC00309858 /* Label.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A4CF1DA1BCDC8AC00309858 /* Label.h */; settings = {ASSET_TAGS = (); }; };
 		0A4CF1E91BCDC8AC00309858 /* Meter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A4CF1DC1BCDC8AC00309858 /* Meter.h */; settings = {ASSET_TAGS = (); }; };
@@ -29,7 +29,21 @@
 		0A4CF1FB1BCDDBD600309858 /* libSDL2_mixer-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1FA1BCDDBD600309858 /* libSDL2_mixer-2.0.0.dylib */; };
 		0A4CF1FD1BCDDBE200309858 /* libSDL2_ttf-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1FC1BCDDBE200309858 /* libSDL2_ttf-2.0.0.dylib */; };
 		0A4CF1FF1BCDDC2A00309858 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1FE1BCDDC2A00309858 /* libboost_system.dylib */; };
+		0A4CF2081BCDE29200309858 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CF2071BCDE29200309858 /* main.cpp */; };
+		0A4CF20C1BCDE2A800309858 /* libSDL_gui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1B01BCDC79000309858 /* libSDL_gui.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0A4CF2031BCDE29200309858 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A4CF1B01BCDC79000309858 /* libSDL_gui.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSDL_gui.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,8 +54,8 @@
 		0A4CF1C51BCDC8A200309858 /* View.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = View.cpp; path = src/View.cpp; sourceTree = "<group>"; };
 		0A4CF1C61BCDC8A200309858 /* ViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ViewController.cpp; path = src/ViewController.cpp; sourceTree = "<group>"; };
 		0A4CF1D31BCDC8AC00309858 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Button.h; path = include/Button.h; sourceTree = "<group>"; };
-		0A4CF1D71BCDC8AC00309858 /* IFSGUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFSGUI.h; path = include/IFSGUI.h; sourceTree = "<group>"; };
-		0A4CF1D81BCDC8AC00309858 /* IFSGUISettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFSGUISettings.h; path = include/IFSGUISettings.h; sourceTree = "<group>"; };
+		0A4CF1D71BCDC8AC00309858 /* SDLGUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLGUI.h; path = include/SDLGUI.h; sourceTree = "<group>"; };
+		0A4CF1D81BCDC8AC00309858 /* SDLGUISettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLGUISettings.h; path = include/SDLGUISettings.h; sourceTree = "<group>"; };
 		0A4CF1D91BCDC8AC00309858 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageView.h; path = include/ImageView.h; sourceTree = "<group>"; };
 		0A4CF1DA1BCDC8AC00309858 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Label.h; path = include/Label.h; sourceTree = "<group>"; };
 		0A4CF1DC1BCDC8AC00309858 /* Meter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Meter.h; path = include/Meter.h; sourceTree = "<group>"; };
@@ -56,6 +70,8 @@
 		0A4CF1FC1BCDDBE200309858 /* libSDL2_ttf-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_ttf-2.0.0.dylib"; path = "../../../usr/local/Cellar/sdl2_ttf/2.0.12/lib/libSDL2_ttf-2.0.0.dylib"; sourceTree = "<group>"; };
 		0A4CF1FE1BCDDC2A00309858 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../usr/local/Cellar/boost/1.58.0/lib/libboost_system.dylib; sourceTree = "<group>"; };
 		0A4CF2001BCDDE5F00309858 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0A4CF2051BCDE29200309858 /* TestApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestApp; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4CF2071BCDE29200309858 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +84,14 @@
 				0A4CF1FB1BCDDBD600309858 /* libSDL2_mixer-2.0.0.dylib in Frameworks */,
 				0A4CF1F91BCDDBC900309858 /* libSDL2_image-2.0.0.dylib in Frameworks */,
 				0A4CF1F71BCDDBB700309858 /* libSDL2-2.0.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A4CF2021BCDE29200309858 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A4CF20C1BCDE2A800309858 /* libSDL_gui.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +109,7 @@
 				0A4CF1F61BCDDBB700309858 /* libSDL2-2.0.0.dylib */,
 				0A4CF1BB1BCDC89700309858 /* include */,
 				0A4CF1BA1BCDC89300309858 /* src */,
+				0A4CF2061BCDE29200309858 /* TestApp */,
 				0A4CF1B11BCDC79000309858 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				0A4CF1B01BCDC79000309858 /* libSDL_gui.dylib */,
+				0A4CF2051BCDE29200309858 /* TestApp */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,8 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				0A4CF1D31BCDC8AC00309858 /* Button.h */,
-				0A4CF1D71BCDC8AC00309858 /* IFSGUI.h */,
-				0A4CF1D81BCDC8AC00309858 /* IFSGUISettings.h */,
+				0A4CF1D71BCDC8AC00309858 /* SDLGUI.h */,
+				0A4CF1D81BCDC8AC00309858 /* SDLGUISettings.h */,
 				0A4CF1D91BCDC8AC00309858 /* ImageView.h */,
 				0A4CF1DA1BCDC8AC00309858 /* Label.h */,
 				0A4CF1DC1BCDC8AC00309858 /* Meter.h */,
@@ -128,6 +154,14 @@
 			name = include;
 			sourceTree = "<group>";
 		};
+		0A4CF2061BCDE29200309858 /* TestApp */ = {
+			isa = PBXGroup;
+			children = (
+				0A4CF2071BCDE29200309858 /* main.cpp */,
+			);
+			path = TestApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -135,12 +169,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A4CF1E41BCDC8AC00309858 /* IFSGUI.h in Headers */,
+				0A4CF1E41BCDC8AC00309858 /* SDLGUI.h in Headers */,
 				0A4CF1E01BCDC8AC00309858 /* Button.h in Headers */,
 				0A4CF1ED1BCDC9E200309858 /* includes.h in Headers */,
 				0A4CF1E71BCDC8AC00309858 /* Label.h in Headers */,
 				0A4CF1EA1BCDC8AC00309858 /* View.h in Headers */,
-				0A4CF1E51BCDC8AC00309858 /* IFSGUISettings.h in Headers */,
+				0A4CF1E51BCDC8AC00309858 /* SDLGUISettings.h in Headers */,
 				0A4CF1E91BCDC8AC00309858 /* Meter.h in Headers */,
 				0A4CF1E61BCDC8AC00309858 /* ImageView.h in Headers */,
 				0A4CF1EB1BCDC8AC00309858 /* ViewController.h in Headers */,
@@ -168,6 +202,23 @@
 			productReference = 0A4CF1B01BCDC79000309858 /* libSDL_gui.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
+		0A4CF2041BCDE29200309858 /* TestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A4CF2091BCDE29200309858 /* Build configuration list for PBXNativeTarget "TestApp" */;
+			buildPhases = (
+				0A4CF2011BCDE29200309858 /* Sources */,
+				0A4CF2021BCDE29200309858 /* Frameworks */,
+				0A4CF2031BCDE29200309858 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestApp;
+			productName = TestApp;
+			productReference = 0A4CF2051BCDE29200309858 /* TestApp */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -178,6 +229,9 @@
 				ORGANIZATIONNAME = "Michael Ryan";
 				TargetAttributes = {
 					0A4CF1AF1BCDC79000309858 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					0A4CF2041BCDE29200309858 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
@@ -195,6 +249,7 @@
 			projectRoot = "";
 			targets = (
 				0A4CF1AF1BCDC79000309858 /* SDL_gui */,
+				0A4CF2041BCDE29200309858 /* TestApp */,
 			);
 		};
 /* End PBXProject section */
@@ -211,6 +266,14 @@
 				0A4CF1F21BCDCFD000309858 /* SDLManager.cpp in Sources */,
 				0A4CF1CF1BCDC8A200309858 /* Meter.cpp in Sources */,
 				0A4CF1CD1BCDC8A200309858 /* Label.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A4CF2011BCDE29200309858 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A4CF2081BCDE29200309858 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +407,20 @@
 			};
 			name = Release;
 		};
+		0A4CF20A1BCDE29200309858 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0A4CF20B1BCDE29200309858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -361,6 +438,14 @@
 			buildConfigurations = (
 				0A4CF1B51BCDC79000309858 /* Debug */,
 				0A4CF1B61BCDC79000309858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0A4CF2091BCDE29200309858 /* Build configuration list for PBXNativeTarget "TestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A4CF20A1BCDE29200309858 /* Debug */,
+				0A4CF20B1BCDE29200309858 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

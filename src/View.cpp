@@ -2,7 +2,7 @@
 //#include "Game.h"
 #include "SDLManager.h"
 
-using namespace IFSGUI;
+using namespace SDLGUI;
 
 SDL_Rect View::WindowSize()
 {

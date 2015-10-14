@@ -3,15 +3,15 @@
 
 #include "includes.h"
 
-namespace IFSGUI
+namespace SDLGUI
 {
-    typedef enum IFSGSnapTo
+    typedef enum SDLGSnapTo
     {
         SnapNone,
         SnapHCenter,
         SnapVCenter,
         SnapBoth
-    } IFSGSnapTo;
+    } SDLGSnapTo;
 
     class View : public std::enable_shared_from_this<View>
     {
@@ -33,7 +33,7 @@ namespace IFSGUI
             SDL_Color borderColor;
 
             //Snaps are helpers that override normal positioning at the RenderFrame level
-            IFSGSnapTo snap;
+            SDLGSnapTo snap;
 
             //View::superview;// = whateverValue;
 

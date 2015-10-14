@@ -4,7 +4,7 @@
 #include "View.h"
 #include "Label.h"
 
-namespace IFSGUI
+namespace SDLGUI
 {
     class Button : public View
     {

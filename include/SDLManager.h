@@ -11,9 +11,7 @@
 
 #include "includes.h"
 
-
-
-namespace IFSGUI
+namespace SDLGUI
 {
     class SDL_Manager
     {
@@ -33,6 +31,6 @@ namespace IFSGUI
     };
 }
 
-using namespace IFSGUI;
+using namespace SDLGUI;
 
 #endif /* SDLManager_h */

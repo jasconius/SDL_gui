@@ -83,8 +83,16 @@ void Label::SetText(string theText)
 	if(this->text != theText)
 	{
 		this->text = theText;
+        
+        double scale = this->RenderScale();
+        
+        double scaledFontSize = (double)fontSize;
+        
+        scaledFontSize *= scale;
+        
+        int scaledFontInt = (int)scaledFontSize;
 		
-		TTF_Font *guiFont = TTF_OpenFont("assets/fonts/arial.ttf", fontSize);
+		TTF_Font *guiFont = TTF_OpenFont("assets/fonts/arial.ttf", scaledFontInt);
 		
 		SDL_Surface *newLineSurface = TTF_RenderText_Blended(guiFont, theText.c_str(), this->textColor);
 		

@@ -1,6 +1,6 @@
 #include "Button.h"
 
-using namespace IFSGUI;
+using namespace SDLGUI;
 
 void Button::SetText(string text)
 {

@@ -2,11 +2,11 @@
 #define LABEL_H
 
 #include "View.h"
-#include "IFSGUISettings.h"
+#include "SDLGUISettings.h"
 
-using namespace IFSGUI;
+using namespace SDLGUI;
 
-namespace IFSGUI
+namespace SDLGUI
 {
     class Label : public View
     {

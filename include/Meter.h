@@ -3,9 +3,9 @@
 
 #include "View.h"
 
-using namespace IFSGUI;
+using namespace SDLGUI;
 
-namespace IFSGUI
+namespace SDLGUI
 {
 
     class Meter : public View

@@ -5,7 +5,7 @@
 
 #include "includes.h"
 
-namespace IFSGUI
+namespace SDLGUI
 {
     class ImageView : public View
     {
