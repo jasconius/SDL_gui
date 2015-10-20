@@ -12,15 +12,21 @@
 #include "includes.h"
 #include "SDLGUI.h"
 
+#define kWindowWidth 1440
+#define kWindowHeight 900
+#define kGAME_TITLE "SDL GUI Test App"
+
+#define kLogicalWindowWidth 1920
+#define kLogicalWindowHeight 1080
+
+#define kUSE_LOGICAL_SIZING 1
+
 using namespace SDLGUI;
 
 class Game
 {
     
 public:
-    
-    string base_resource_path;
-    void InitializeDataPath();
     
     
     static Game *SharedGame;
@@ -81,6 +87,7 @@ protected:
 private:
     //Essential
     bool Running;
+    SDL_Event Event;
     
 };
 
