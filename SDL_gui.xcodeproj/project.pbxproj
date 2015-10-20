@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A05E1851BD5C2EF00FE7BC4 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1F61BCDDBB700309858 /* libSDL2-2.0.0.dylib */; };
+		0A05E1861BD5C2F200FE7BC4 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1F81BCDDBC900309858 /* libSDL2_image-2.0.0.dylib */; };
+		0A05E1871BD5C2F300FE7BC4 /* libSDL2_mixer-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1FA1BCDDBD600309858 /* libSDL2_mixer-2.0.0.dylib */; };
+		0A05E1881BD5C2F600FE7BC4 /* libSDL2_ttf-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1FC1BCDDBE200309858 /* libSDL2_ttf-2.0.0.dylib */; };
+		0A05E1891BD5C2F800FE7BC4 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4CF1FE1BCDDC2A00309858 /* libboost_system.dylib */; };
 		0A4CF1C81BCDC8A200309858 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CF1BD1BCDC8A200309858 /* Button.cpp */; settings = {ASSET_TAGS = (); }; };
 		0A4CF1CC1BCDC8A200309858 /* ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CF1C11BCDC8A200309858 /* ImageView.cpp */; settings = {ASSET_TAGS = (); }; };
 		0A4CF1CD1BCDC8A200309858 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CF1C21BCDC8A200309858 /* Label.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -95,6 +100,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A4CF20C1BCDE2A800309858 /* libSDL_gui.dylib in Frameworks */,
+				0A05E1881BD5C2F600FE7BC4 /* libSDL2_ttf-2.0.0.dylib in Frameworks */,
+				0A05E1891BD5C2F800FE7BC4 /* libboost_system.dylib in Frameworks */,
+				0A05E1851BD5C2EF00FE7BC4 /* libSDL2-2.0.0.dylib in Frameworks */,
+				0A05E1871BD5C2F300FE7BC4 /* libSDL2_mixer-2.0.0.dylib in Frameworks */,
+				0A05E1861BD5C2F200FE7BC4 /* libSDL2_image-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +442,21 @@
 		0A4CF20A1BCDE29200309858 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl2_ttf/2.0.12/include/SDL2,
+					/usr/local/Cellar/sdl2_image/2.0.0_1/include/SDL2,
+					/usr/local/Cellar/sdl2_mixer/2.0.0/include/SDL2,
+					/usr/local/Cellar/sdl2/2.0.3/include/SDL2,
+					/usr/local/Cellar/boost/1.58.0/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/sdl2/2.0.3/lib,
+					/usr/local/Cellar/sdl2_image/2.0.0_1/lib,
+					/usr/local/Cellar/sdl2_mixer/2.0.0/lib,
+					/usr/local/Cellar/sdl2_ttf/2.0.12/lib,
+					/usr/local/Cellar/boost/1.58.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -439,6 +464,21 @@
 		0A4CF20B1BCDE29200309858 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl2_ttf/2.0.12/include/SDL2,
+					/usr/local/Cellar/sdl2_image/2.0.0_1/include/SDL2,
+					/usr/local/Cellar/sdl2_mixer/2.0.0/include/SDL2,
+					/usr/local/Cellar/sdl2/2.0.3/include/SDL2,
+					/usr/local/Cellar/boost/1.58.0/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/sdl2/2.0.3/lib,
+					/usr/local/Cellar/sdl2_image/2.0.0_1/lib,
+					/usr/local/Cellar/sdl2_mixer/2.0.0/lib,
+					/usr/local/Cellar/sdl2_ttf/2.0.12/lib,
+					/usr/local/Cellar/boost/1.58.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -462,6 +502,7 @@
 				0A4CF1B61BCDC79000309858 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A4CF2091BCDE29200309858 /* Build configuration list for PBXNativeTarget "TestApp" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +511,7 @@
 				0A4CF20B1BCDE29200309858 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,8 +12,7 @@
 #include "includes.h"
 #include "SDLGUI.h"
 
-using namespace IFSGUI;
-using namespace Awesomium;
+using namespace SDLGUI;
 
 class Game
 {
