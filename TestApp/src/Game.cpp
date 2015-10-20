@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "Game.h"
 
+Game *Game::SharedGame;
 
 int Game::OnExecute()
 {
@@ -36,6 +37,13 @@ int Game::OnExecute()
     Cleanup();
     
     return 0;
+}
+
+bool Game::LoadContent()
+{
+    activeViewController = boost::make_shared<ViewController>();
+    
+    return true;
 }
 
 bool Game::OnInit()
@@ -91,6 +99,11 @@ bool Game::OnInit()
     }
     
     return true;
+}
+
+void Game::OnEvent(SDL_Event *Event)
+{
+    
 }
 
 void Game::OnLoop()
