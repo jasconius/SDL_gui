@@ -28,7 +28,7 @@ namespace SDLGUI
             virtual ~Label();
 
         protected:
-            virtual SDL_Rect RenderFrame();
+            //virtual SDL_Rect RenderFrame();
         private:
     };
 }

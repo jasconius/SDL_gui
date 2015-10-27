@@ -4,6 +4,7 @@
 
 //Walk back the W/H scaling on labels to prevent fuzzy text
 //Also compute special snaps
+/*
 SDL_Rect Label::RenderFrame()
 {
     SDL_Rect retval = View::RenderFrame();
@@ -76,7 +77,7 @@ SDL_Rect Label::RenderFrame()
     }
 
     return retval;
-}
+}*/
 
 void Label::SetText(string theText)
 {

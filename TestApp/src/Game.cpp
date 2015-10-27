@@ -53,10 +53,10 @@ bool Game::LoadContent()
     boost::shared_ptr<Label> lblTest = boost::make_shared<Label>();
     
     lblTest->SetText("test");
-    
-    activeViewController->view->AddSubview(lblTest);
-    
     lblTest->snap = SnapHCenter;
+    
+    redView->AddSubview(lblTest);
+    
     
     return true;
 }

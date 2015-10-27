@@ -23,9 +23,72 @@ SDL_Rect View::WindowSize()
     return retval;
 }
 
+bool View::ShouldSnapX()
+{
+    return this->snap == SnapHCenter || this->snap == SnapBoth;
+}
+
+bool View::ShouldSnapY()
+{
+    return this->snap == SnapVCenter || this->snap == SnapBoth;
+}
+
 double View::RenderScale()
 {
 	return this->WindowSize().h / (double)SDL_Manager::sharedManager->logicalWindowHeight;
+}
+
+SDL_Rect View::LogicalFrame()
+{
+    int xSnap = 0;
+    int ySnap = 0;
+    
+    SDL_Rect parentFrame;
+    
+    if (this->superview != nullptr)
+    {
+        parentFrame = this->superview->LogicalFrame();
+    }
+    else
+    {
+        parentFrame.h = SDL_Manager::sharedManager->logicalWindowHeight;
+        parentFrame.w = SDL_Manager::sharedManager->logicalWindowWidth;
+    }
+    
+    if (this->ShouldSnapX())
+    {
+        xSnap = parentFrame.w / 2;
+        xSnap -= (this->frame.w) / 2;
+    }
+    
+    if (this->ShouldSnapY())
+    {
+        ySnap = parentFrame.h / 2;
+        ySnap -= (this->frame.h) / 2;
+    }
+    
+    SDL_Rect retval = {
+        this->ShouldSnapX() ? xSnap : (int)ceilf(this->frame.x),
+        this->ShouldSnapY() ? ySnap : (int)ceilf(this->frame.y),
+        (int)ceilf(this->frame.w),
+        (int)ceilf(this->frame.h)
+    };
+    
+    //Add superview x/y
+    if(this->superview != nullptr)
+    {
+        //if(!shouldSnapX)
+        //{
+        retval.x += this->superview->RenderFrame().x;
+        //}
+        
+        //if(!shouldSnapY)
+        //{
+        retval.y += this->superview->RenderFrame().y;
+        //}
+    }
+    
+    return retval;
 }
 
 //TODO this over-evaluates RenderScale
@@ -35,68 +98,19 @@ SDL_Rect View::RenderFrame()
     
     scale = 1.0f;
 
-    bool shouldSnapX = false;
-    bool shouldSnapY = false;
+    SDL_Rect retval = this->LogicalFrame();
 
-    int xSnap = 0;
-    int ySnap = 0;
-
-    if(snap != SnapNone)
+    retval.w = (int)ceilf(retval.w * scale);
+    retval.h = (int)ceilf(retval.h * scale);
+    
+    if (!this->ShouldSnapY())
     {
-        SDL_Rect windowSz;
-        windowSz.h = this->WindowSize().h;
-        windowSz.w = this->WindowSize().w;
-
-        if(this->superview != nullptr)
-        {
-            windowSz = this->superview->RenderFrame();
-        }
-
-        if(snap == SnapHCenter)
-        {
-            shouldSnapX = true;
-            xSnap = windowSz.w / 2;
-            xSnap -= (this->frame.w) / 2;
-        }
-
-        if(snap == SnapVCenter)
-        {
-            shouldSnapY = true;
-            ySnap = windowSz.h / 2;
-            ySnap -= (this->frame.h * scale) / 2;
-        }
-
-        if(snap == SnapBoth)
-        {
-            shouldSnapX = true;
-            xSnap = windowSz.w / 2;
-            xSnap -= (this->frame.w * scale) / 2;
-
-            shouldSnapY = true;
-            ySnap = windowSz.h / 2;
-            ySnap -= (this->frame.h * scale) / 2;
-        }
+        retval.y = (int)ceilf(retval.y * scale);
     }
-
-    SDL_Rect retval = {
-        shouldSnapX ? xSnap : (int)ceilf(this->frame.x * scale),
-        shouldSnapY ? ySnap : (int)ceilf(this->frame.y * scale),
-        (int)ceilf(this->frame.w * scale),
-        (int)ceilf(this->frame.h * scale)
-    };
-
-    //Add superview x/y
-    if(this->superview != nullptr)
+    
+    if (!this->ShouldSnapX())
     {
-        //if(!shouldSnapX)
-        //{
-            retval.x += this->superview->RenderFrame().x;
-        //}
-
-        //if(!shouldSnapY)
-        //{
-            retval.y += this->superview->RenderFrame().y;
-        //}
+        retval.x = (int)ceilf(retval.x * scale);
     }
 
     return retval;

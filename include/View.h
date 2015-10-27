@@ -59,6 +59,7 @@ namespace SDLGUI
 
             virtual void Render();
 
+            virtual SDL_Rect LogicalFrame();
             virtual SDL_Rect RenderFrame();
 
             View();
@@ -69,6 +70,9 @@ namespace SDLGUI
 
             double RenderScale();
             SDL_Rect WindowSize();
+        
+            bool ShouldSnapX();
+            bool ShouldSnapY();
         
             list<boost::shared_ptr<View>> subviewsToRemove;
 
