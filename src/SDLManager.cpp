@@ -8,4 +8,18 @@
 
 #include "SDLManager.h"
 
-SDL_Manager *SDL_Manager::sharedManager;
+SDL_Manager *SDL_Manager::sharedManager = nullptr;
+
+SDL_Manager::SDL_Manager(SDL_Window *theWindow, SDL_Renderer *theRenderer, int theLogicalWindowWidth, int theLogicalWindowHeight, string thePathToDefaultFont, int theDefaultFontSize)
+{
+    sharedManager = this;
+    
+    this->window = theWindow;
+    this->renderer = theRenderer;
+    this->logicalWindowWidth = theLogicalWindowWidth;
+    this->logicalWindowHeight = theLogicalWindowHeight;
+    //this->defaultFont = theDefaultFont;
+    
+    this->pathToDefaultFont = thePathToDefaultFont;
+    this->defaultFont = TTF_OpenFont(thePathToDefaultFont.c_str(), theDefaultFontSize);
+}

@@ -7,6 +7,7 @@
 #include "Label.h"
 #include "ViewController.h"
 #include "Meter.h"
+#include "SDLManager.h"
 
 
 #endif // IFSGUI_H_INCLUDED

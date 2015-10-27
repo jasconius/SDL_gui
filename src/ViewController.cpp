@@ -1,5 +1,5 @@
 #include "ViewController.h"
-//#include "SDLManager.h"
+#include "SDLManager.h"
 
 void ViewController::Update()
 {
@@ -17,7 +17,7 @@ void ViewController::Render()
 ViewController::ViewController()
 {
     //ctor
-
+    
     view = boost::make_shared<View>();
     
 }

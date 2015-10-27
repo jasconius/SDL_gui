@@ -32,6 +32,8 @@ double View::RenderScale()
 SDL_Rect View::RenderFrame()
 {
     double scale = this->RenderScale();
+    
+    scale = 1.0f;
 
     bool shouldSnapX = false;
     bool shouldSnapY = false;
@@ -54,7 +56,7 @@ SDL_Rect View::RenderFrame()
         {
             shouldSnapX = true;
             xSnap = windowSz.w / 2;
-            xSnap -= (this->frame.w * scale) / 2;
+            xSnap -= (this->frame.w) / 2;
         }
 
         if(snap == SnapVCenter)
@@ -202,23 +204,12 @@ void View::Render()
     {
         return;
     }
+    
+    SDL_SetRenderDrawBlendMode(SDL_Manager::sharedManager->renderer, SDL_BLENDMODE_BLEND);
 
     SDL_Rect targBounds = this->RenderFrame();
 	
-	if(borderWidth > 0)
-    {
-		SDL_Rect borderRect = targBounds;
-		
-		borderRect.w += borderWidth*2;
-		borderRect.h += borderWidth*2;
-		borderRect.x -= borderWidth;
-		borderRect.y -= borderWidth;
-		
-		//TODO downsampling is really sloppy for GUI layer, makes thin borders suck
-        //TODO border color
-        SDL_SetRenderDrawColor(SDL_Manager::sharedManager->renderer, this->borderColor.r, this->borderColor.g, this->borderColor.b, this->borderColor.a);
-        SDL_RenderFillRect(SDL_Manager::sharedManager->renderer, &borderRect);
-    }
+	
 
     SDL_SetRenderDrawColor(SDL_Manager::sharedManager->renderer, this->backgroundColor.r, this->backgroundColor.g, this->backgroundColor.b, this->backgroundColor.a);
     SDL_RenderFillRect(SDL_Manager::sharedManager->renderer, &targBounds);
@@ -229,8 +220,13 @@ void View::Render()
         if(i != nullptr)
             i->Render();
     }
-
     
+    if(borderWidth > 0)
+    {
+        SDL_Rect borderRect = targBounds;
+        SDL_SetRenderDrawColor(SDL_Manager::sharedManager->renderer, this->borderColor.r, this->borderColor.g, this->borderColor.b, this->borderColor.a);
+        SDL_RenderDrawRect(SDL_Manager::sharedManager->renderer, &borderRect);
+    }
     
     for (boost::shared_ptr<View> i: this->subviewsToRemove)
     {

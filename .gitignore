@@ -26,3 +26,5 @@
 *.exe
 *.out
 *.app
+SDL_gui.xcodeproj/xcuserdata/jasconius.xcuserdatad/xcdebugger
+SDL_gui.xcodeproj/xcuserdata/jasconius.xcuserdatad/xcschemes/TestApp.xcscheme

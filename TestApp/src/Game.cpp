@@ -43,6 +43,21 @@ bool Game::LoadContent()
 {
     activeViewController = boost::make_shared<ViewController>();
     
+    boost::shared_ptr<View> redView = boost::make_shared<View>();
+    
+    redView->backgroundColor = { 255,0,0,255 };
+    redView->frame = { 0, 0, 1920, 1080 };
+    
+    activeViewController->view->AddSubview(redView);
+    
+    boost::shared_ptr<Label> lblTest = boost::make_shared<Label>();
+    
+    lblTest->SetText("test");
+    
+    activeViewController->view->AddSubview(lblTest);
+    
+    lblTest->snap = SnapHCenter;
+    
     return true;
 }
 
@@ -98,12 +113,41 @@ bool Game::OnInit()
         //small fonts shouldn't technically be a problem... font size shifts relative to LOGICAL size, not literal window size
     }
     
+    //this->guiFont = TTF_OpenFont("assets/fonts/arial.ttf", kSMALL_FONT_SIZE);
+    
+    SDL_Manager::sharedManager = new SDL_Manager(window, renderer, kLogicalWindowWidth, kLogicalWindowHeight, "assets/fonts/arial.ttf", 12);
+    
+    
+    runningGame = true;
+    //TTF_Font *test = new TTF_Font();
+    
     return true;
 }
 
 void Game::OnEvent(SDL_Event *Event)
 {
-    
+    if(Event->type == SDL_MOUSEBUTTONDOWN)
+    {
+        SDL_MouseButtonEvent *e = (SDL_MouseButtonEvent *)Event;
+        
+        switch(e->button)
+        {
+            case SDL_BUTTON_LEFT:
+                
+                if(activeViewController->view->HandleClick())
+                {
+                    return;
+                }
+                
+                
+                
+                break;
+                
+            case SDL_BUTTON_RIGHT:
+                
+                break;
+        }
+    }
 }
 
 void Game::OnLoop()
@@ -128,7 +172,7 @@ void Game::OnRender()
                                     gameRect.h);
     }
     
-    SDL_SetRenderTarget(Game::SharedGame->renderer, gameTex);
+    //SDL_SetRenderTarget(Game::SharedGame->renderer, gameTex);
     SDL_SetRenderDrawColor(Game::SharedGame->renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     
@@ -137,9 +181,9 @@ void Game::OnRender()
         activeViewController->Render();
     }
     
-    SDL_SetRenderTarget(Game::SharedGame->renderer, NULL);
-    SDL_RenderClear(Game::SharedGame->renderer);
-    SDL_RenderCopy(Game::SharedGame->renderer, gameTex, NULL, NULL);
+    //SDL_SetRenderTarget(Game::SharedGame->renderer, NULL);
+    //SDL_RenderClear(Game::SharedGame->renderer);
+    //SDL_RenderCopy(Game::SharedGame->renderer, gameTex, NULL, NULL);
     
     SDL_RenderPresent(renderer);
 }
@@ -149,4 +193,34 @@ void Game::Cleanup()
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
+}
+
+
+Game::Game()
+{
+    window = NULL;
+    Running = true;
+    
+    onMainMenu = true;
+    runningGame = false;
+    
+    guiFont = NULL;
+    
+    activeViewController = nullptr;
+    
+    lastTime = 0;
+    
+    acceptingTextInput = false;
+    
+    Game::SharedGame = this;
+    
+    gameTex = nullptr;
+    
+}
+
+int main(int argc, char* argv[])
+{
+    Game theGame;
+    
+    return theGame.OnExecute();
 }

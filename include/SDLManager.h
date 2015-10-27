@@ -26,6 +26,11 @@ namespace SDLGUI
         int logicalWindowWidth;
         int logicalWindowHeight;
         
+        TTF_Font *defaultFont;
+        string pathToDefaultFont;
+        
+        SDL_Manager(SDL_Window *theWindow, SDL_Renderer *theRenderer, int theLogicalWindowWidth, int theLogicalWindowHeight, string thePathToDefaultFont, int theDefaultFontSize);
+        
         static SDL_Manager *sharedManager;
         
     };

@@ -12,8 +12,8 @@
 #include "includes.h"
 #include "SDLGUI.h"
 
-#define kWindowWidth 1440
-#define kWindowHeight 900
+#define kWindowWidth 1280
+#define kWindowHeight 720
 #define kGAME_TITLE "SDL GUI Test App"
 
 #define kLogicalWindowWidth 1920
