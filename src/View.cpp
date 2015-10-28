@@ -180,12 +180,13 @@ bool View::HandleClick()
     //Always prefer childrens click handling. the deepest possible view gets to handle
     if(this->eatsClicks && !retval)
     {
-        //Get the mouse state and figure out if it's a click on the render bounds
-        SDL_Point simClick = SDL_Manager::sharedManager->lastKnownMousePos;
+        int x, y;
+        
+        SDL_GetMouseState(&x, &y);
 
         SDL_Rect clickRect = {
-            simClick.x,
-            simClick.y,
+            x,
+            y,
             5,
             5
         };

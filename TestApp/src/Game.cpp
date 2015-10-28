@@ -39,6 +39,11 @@ int Game::OnExecute()
     return 0;
 }
 
+void Game::res1click()
+{
+    
+}
+
 bool Game::LoadContent()
 {
     activeViewController = boost::make_shared<ViewController>();
@@ -56,6 +61,26 @@ bool Game::LoadContent()
     lblTest->snap = SnapHCenter;
     
     redView->AddSubview(lblTest);
+    
+    boost::shared_ptr<Button> btn1 = boost::make_shared<Button>();
+    
+    btn1->SetText("Set Res 1");
+    
+    btn1->clickHandler = [] () -> void {
+        
+        printf("btn1 clicked\n");
+        
+    };
+    
+    redView->clickHandler = [] () -> void {
+        
+        printf("redview clicked\n");
+        
+    };
+    
+    printf("test..\n");
+    
+    redView->AddSubview(btn1);
     
     
     return true;

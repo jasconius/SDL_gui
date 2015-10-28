@@ -21,8 +21,6 @@ namespace SDLGUI
         
         SDL_Window *window;
         
-        SDL_Point lastKnownMousePos;
-        
         int logicalWindowWidth;
         int logicalWindowHeight;
         

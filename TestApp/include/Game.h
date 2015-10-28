@@ -65,9 +65,6 @@ public:
     
     bool acceptingTextInput;
     
-    SDL_Point lastKnownMousePos;
-    
-    
     boost::shared_ptr<ViewController> activeViewController;
     
     
@@ -85,7 +82,11 @@ public:
     //Demo
 protected:
 private:
+    
+    void res1click();
+    
     //Essential
+    
     bool Running;
     SDL_Event Event;
     

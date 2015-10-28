@@ -128,7 +128,7 @@ Label::Label()
     //ctor
     textColor.r = textColor.g = textColor.b = textColor.a = 255;
     backgroundColor.r = backgroundColor.g = backgroundColor.b = backgroundColor.a = 0;
-    borderWidth = 1;
+    borderWidth = 0;
     fontSize = kDEFAULT_FONT_SIZE;
 }
 
