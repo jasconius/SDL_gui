@@ -74,13 +74,13 @@ bool Game::LoadContent()
     
     btn1->SetText("Set Res 1");
     
-    btn1->setClickHandler([] () -> void {
+    btn1->setClickHandler([this] () -> void {
         
         printf("btn1 clicked\n");
         
+        SDL_SetWindowSize(this->window, kWindowWidth, kWindowHeight);
+        
     });
-    
-    btn1->borderWidth = 2;
     
     redView->setClickHandler([] () -> void {
         
@@ -93,6 +93,22 @@ bool Game::LoadContent()
     printf("test..\n");
     
     redView->AddSubview(btn1);
+    
+    boost::shared_ptr<Button> btn2 = boost::make_shared<Button>();
+    
+    btn2->SetText("Set Res 2");
+    
+    btn2->setClickHandler([this] () -> void {
+        
+        printf("btn2 clicked\n");
+        
+        SDL_SetWindowSize(this->window, 853, 480);
+        
+    });
+    
+    btn2->frame = {250,0,200,50};
+    
+    redView->AddSubview(btn2);
     
     
     return true;
