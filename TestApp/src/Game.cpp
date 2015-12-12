@@ -39,19 +39,27 @@ int Game::OnExecute()
     return 0;
 }
 
+
 void Game::res1click()
 {
     
 }
 
+float logicalScale()
+{
+    return (float)kLogicalWindowHeight/(float)kWindowHeight;
+}
+
 bool Game::LoadContent()
 {
+    SDL_Manager::sharedManager->logicalScale = logicalScale();
+    
     activeViewController = boost::make_shared<ViewController>();
     
     boost::shared_ptr<View> redView = boost::make_shared<View>();
     
     redView->backgroundColor = { 255,0,0,255 };
-    redView->frame = { 0, 0, 1920, 1080 };
+    redView->frame = { 0, 0, kLogicalWindowWidth, kLogicalWindowHeight };
     
     activeViewController->view->AddSubview(redView);
     
@@ -66,17 +74,21 @@ bool Game::LoadContent()
     
     btn1->SetText("Set Res 1");
     
-    btn1->clickHandler = [] () -> void {
+    btn1->setClickHandler([] () -> void {
         
         printf("btn1 clicked\n");
         
-    };
+    });
     
-    redView->clickHandler = [] () -> void {
+    btn1->borderWidth = 2;
+    
+    redView->setClickHandler([] () -> void {
         
         printf("redview clicked\n");
         
-    };
+    });
+    
+    //redView->eatsClicks = true;
     
     printf("test..\n");
     

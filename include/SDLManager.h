@@ -24,6 +24,8 @@ namespace SDLGUI
         int logicalWindowWidth;
         int logicalWindowHeight;
         
+        float logicalScale;
+        
         TTF_Font *defaultFont;
         string pathToDefaultFont;
         

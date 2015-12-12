@@ -4,6 +4,21 @@
 
 using namespace SDLGUI;
 
+
+void View::setClickHandler(std::function<void ()> theHandler)
+{
+    this->clickHandler = theHandler;
+    
+    if (this->clickHandler == NULL)
+    {
+        this->eatsClicks = false;
+    }
+    else
+    {
+        this->eatsClicks = true;
+    }
+}
+
 SDL_Rect View::WindowSize()
 {
     int w = 0;
@@ -185,8 +200,8 @@ bool View::HandleClick()
         SDL_GetMouseState(&x, &y);
 
         SDL_Rect clickRect = {
-            x,
-            y,
+            (int)((float)x*SDL_Manager::sharedManager->logicalScale),
+            (int)((float)y*SDL_Manager::sharedManager->logicalScale),
             5,
             5
         };

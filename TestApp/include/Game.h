@@ -19,6 +19,9 @@
 #define kLogicalWindowWidth 1920
 #define kLogicalWindowHeight 1080
 
+//#define kLogicalWindowWidth 1280
+//#define kLogicalWindowHeight 720
+
 #define kUSE_LOGICAL_SIZING 1
 
 using namespace SDLGUI;
@@ -66,7 +69,6 @@ public:
     bool acceptingTextInput;
     
     boost::shared_ptr<ViewController> activeViewController;
-    
     
     void SetFullscreen();
     void SetWindowed();

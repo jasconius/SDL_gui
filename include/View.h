@@ -55,7 +55,7 @@ namespace SDLGUI
             //auto clickLambda = nullptr;
 
             //IFSGUIEventHandler clickHandler = nullptr;
-            std::function<void ()> clickHandler;
+            void setClickHandler(std::function<void ()> theHandler);
 
             virtual void Render();
 
@@ -67,7 +67,7 @@ namespace SDLGUI
 
         protected:
 
-
+            std::function<void ()> clickHandler;
             double RenderScale();
             SDL_Rect WindowSize();
         
